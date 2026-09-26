@@ -1,0 +1,16 @@
+order_id,user_id,product_id,gmv,nmv,product_quantities,promotion_value,category_name_level_1_id,category_name_level_2_id,payment_method,order_status,shipping_status,shipping_address,updated_time,created_time
+ORD001,A093001,P001,150,130,2,20.0,1,101,Credit Card,Completed,Delivered,"123 Main St, Hanoi",2024-11-10 12:00:00,2024-11-09 10:30:00
+ORD002,A093002,P002,200,180,3,10.0,2,102,SeaPay,Completed,Delivered,"456 Le Loi, Ho Chi Minh City",2024-11-11 14:30:00,2024-11-10 16:00:00
+ORD003,A093003,P003,300,250,1,50.0,1,103,SeaPay,Pending,Processing,"789 Nguyen Trai, Da Nang",2024-11-12 09:00:00,2024-11-11 17:45:00
+ORD004,A093004,P005,100,90,2,10.0,3,104,Credit Card,Completed,Delivered,"321 Hai Ba Trung, Hanoi",2024-11-13 15:20:00,2024-11-12 11:00:00
+ORD005,A093005,P003,250,230,4,20.0,2,105,Cash,Canceled,Canceled,"654 Pham Ngoc Thach, Ho Chi Minh City",2024-11-14 10:10:00,2024-11-13 18:30:00
+ORD006,A093006,P001,180,160,2,20.0,1,106,Cash,Completed,Delivered,"1234 Bui Thi Xuan, Haiphong",2024-11-15 12:05:00,2024-11-14 14:25:00
+ORD007,A093007,P001,120,100,1,,3,107,Cash,Pending,Processing,"987 Le Quang Dieu, Da Nang",2024-11-16 11:30:00,2024-11-15 09:15:00
+ORD008,A093008,P003,500,450,5,50.0,1,108,Credit Card,Completed,Delivered,"8908 Hoang Hoa Tham, Hanoi",2024-11-17 13:45:00,2024-11-16 10:00:00
+ORD008,A093008,P006,350,300,2,50.0,2,109,Credit Card,Completed,Delivered,"8908 Hoang Hoa Tham, Hanoi",2024-11-17 13:45:00,2024-11-16 10:00:00
+ORD008,A093008,P001,450,420,3,30.0,3,110,Credit Card,Completed,Delivered,"8908 Hoang Hoa Tham, Hanoi",2024-11-17 13:45:00,2024-11-16 10:00:00
+ORD011,A093001,P006,110,95,1,,1,111,PayPal,Completed,Delivered,"123 Main St, Hanoi",2024-11-20 10:00:00,2024-11-19 12:00:00
+ORD012,A093002,P001,140,120,2,20.0,2,112,Bank Transfer,Completed,Delivered,"456 Le Loi, Ho Chi Minh City",2024-11-21 11:30:00,2024-11-20 14:00:00
+ORD013,A093003,P009,220,200,3,30.0,3,113,Credit Card,Pending,Processing,"789 Nguyen Trai, Da Nang",2024-11-22 13:15:00,2024-11-21 15:45:00
+ORD014,A093004,P001,310,280,2,30.0,1,114,PayPal,Completed,Delivered,"321 Hai Ba Trung, Hanoi",2024-11-23 10:30:00,2024-11-22 12:00:00
+ORD015,A093005,P005,260,240,4,20.0,2,115,Bank Transfer,Completed,Delivered,"654 Pham Ngoc Thach, Ho Chi Minh City",2024-11-24 14:00:00,2024-11-23 16:30:00

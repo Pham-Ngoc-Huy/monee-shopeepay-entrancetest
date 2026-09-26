@@ -1,0 +1,12 @@
+product_id,product_name,category_name_level_1,category_name_level_2,product_price,stock_quantities,description,image_source,status,updated_time,created_time
+P001,Item X1,Gadgets,Smart Devices,999.99,50,Description A,Image_X1.jpg,Active,2024-11-10 12:00:00,2024-11-09 10:00:00
+P002,Item Y2,Appliances,Kitchen Gadgets,299.99,30,Description B,Image_Y2.jpg,Active,2024-11-11 14:30:00,2024-11-10 16:30:00
+P003,Item Z3,Apparel,Outerwear,79.99,200,Description C,Image_Z3.jpg,Out of Stock,2024-11-12 09:00:00,2024-11-11 17:00:00
+P004,Item W4,Gadgets,Computing Devices,1199.99,25,Description D,Image_W4.jpg,Active,2024-11-13 15:30:00,2024-11-12 11:30:00
+P005,Item V5,Beauty,Skincare Essentials,49.99,100,Description E,Image_V5.jpg,Active,2024-11-14 13:20:00,2024-11-13 14:45:00
+P006,Item U6,Furniture,Living Room Decor,249.99,10,Description F,Image_U6.jpg,Active,2024-11-15 12:05:00,2024-11-14 14:25:00
+P007,Item T7,Gadgets,Audio & Headphones,89.99,150,Description G,Image_T7.jpg,Active,2024-11-16 11:15:00,2024-11-15 09:30:00
+P008,Item S8,Appliances,Climate Control,599.99,20,Description H,Image_S8.jpg,Out of Stock,2024-11-17 13:45:00,2024-11-16 10:15:00
+P009,Item R9,Apparel,Accessories,29.99,300,Description I,Image_R9.jpg,Active,2024-11-18 14:00:00,2024-11-17 15:30:00
+P010,Item Q10,Gadgets,Photography Equipment,499.99,60,Description J,Image_Q10.jpg,Active,2024-11-19 16:00:00,2024-11-18 12:00:00
+P011,Item Z33,Apparel,Outerwear,90.0,100,Description k,Image_ Z33.jpg,Active,2024-11-15 12:05:00,2024-11-12 11:30:00

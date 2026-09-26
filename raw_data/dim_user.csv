@@ -1,0 +1,7 @@
+user_id,user_name,last_name,first_name,email,created_time
+A093001,thanhdt,Đỗ Thanh,Duy,duy.dothanh@example.com,2024-01-15 10:30:00
+A093002,nguyenlt,Nguyễn Lê,Tuấn,tuan.nguyenlt@example.com,2024-02-12 14:45:00
+A093003,tranht,,Trang,thao.tranht@example.com,2024-03-10 09:20:00
+A093004,phamv,Phạm Văn,Ming,minh.phamv@example.com,2024-04-05 16:50:00
+A093005,lethih,Lê Thị Hồng,Hà,ha.lethih@example.com,2024-05-22 12:00:00
+A093006,nguyenhd,,Đức,duc.nguyenhd@example.com,2024-06-18 08:15:00
