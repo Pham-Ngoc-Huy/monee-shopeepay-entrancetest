@@ -5,7 +5,7 @@ from typing import Any, Optional, Sequence
 CREATE_TABLE_SQL: dict[str, str] = {
     "dim_user": """
         CREATE TABLE IF NOT EXISTS dim_user (
-            user_id INTEGER PRIMARY KEY,
+            user_id TEXT PRIMARY KEY,
             user_name TEXT,
             last_name TEXT,
             first_name TEXT,
@@ -16,7 +16,7 @@ CREATE_TABLE_SQL: dict[str, str] = {
 
     "dim_products": """
         CREATE TABLE IF NOT EXISTS dim_products (
-            product_id INTEGER PRIMARY KEY,
+            product_id TEXT PRIMARY KEY,
             product_name TEXT,
             category_name_level_1 TEXT,
             category_name_level_2 TEXT,
@@ -32,10 +32,9 @@ CREATE_TABLE_SQL: dict[str, str] = {
 
     "dwd_order": """
         CREATE TABLE IF NOT EXISTS dwd_order (
-            order_id INTEGER PRIMARY KEY,
-
-            user_id INTEGER,
-            product_id INTEGER,
+            order_id TEXT,
+            user_id TEXT,
+            product_id TEXT,
 
             gmv DECIMAL,
             nmv DECIMAL,
@@ -52,6 +51,8 @@ CREATE_TABLE_SQL: dict[str, str] = {
 
             updated_time DATETIME,
             created_time DATETIME,
+
+            PRIMARY KEY (order_id),
 
             FOREIGN KEY (user_id)
                 REFERENCES dim_user(user_id),

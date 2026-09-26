@@ -1,20 +1,22 @@
 import pandas as pd
+from pathlib import Path
 
 from database.database import DataBase
+from database.schema import CREATE_TABLE_SQL
 
 
-DIM_USER = "raw_data/dim_user.csv"
-DIM_PRODUCTS = "raw_data/dim_products.csv"
-DWD_ORDER = "raw_data/dwd_order.csv"
-
-DATABASE_PATH = "database/sql_questions.db"
+BASE_DIR = Path(__file__).parent
+DIM_USER = str(BASE_DIR / "raw_data/dim_user.csv")
+DIM_PRODUCTS = str(BASE_DIR / "raw_data/dim_products.csv")
+DWD_ORDER = str(BASE_DIR / "raw_data/dwd_order.csv")
+DATABASE_PATH = str(BASE_DIR / "database/sql_questions.db")
 
 ID = "string"
 TEXT = "string"
 FLOAT = "Float64"
 INT = "Int64"
 TIMESTAMP = "datetime64[ns]"
-DATETIME = ""
+DATETIME = "datetime64[ns]"
 
 DTYPES = {
     "dim_user": {
@@ -57,13 +59,54 @@ DTYPES = {
     },
 }
 
+# columns that are datetime-like in config (both TIMESTAMP and DATETIME map to datetime64[ns])
+_DATETIME_TYPES = {TIMESTAMP, DATETIME}
+
 
 def read(path: str, table_name: str) -> pd.DataFrame:
     declared = DTYPES[table_name]
-    parse_dates = [c for c, d in declared.items() if d == TIMESTAMP]
-    dtypes = {c: d for c, d in declared.items() if d != TIMESTAMP}
+    # Robust datetime detection: any dtype containing "datetime"
+    parse_dates = [c for c, d in declared.items() if "datetime" in d]
+    # fallback to explicit set check (TIMESTAMP == DATETIME so both qualify)
+    if not parse_dates:
+        parse_dates = [c for c, d in declared.items() if d in _DATETIME_TYPES]
+    dtypes = {c: d for c, d in declared.items() if c not in parse_dates}
 
-    return pd.read_csv(path, dtype=dtypes, parse_dates=parse_dates)
+    df = pd.read_csv(path, dtype=dtypes, parse_dates=parse_dates)
+
+    # --- validation: ensure columns match config exactly ---
+    expected = list(declared.keys())
+    missing = [c for c in expected if c not in df.columns]
+    extra = [c for c in df.columns if c not in expected]
+    if missing:
+        raise ValueError(f"{table_name}: missing columns {missing} (expected {expected}, got {list(df.columns)})")
+    if extra:
+        raise ValueError(f"{table_name}: extra columns {extra} (expected {expected})")
+    # reorder to declared order (important for INSERT without column mismatch)
+    df = df[expected]
+
+    # ensure string/ID columns with empty string -> <NA> -> NULL on insert
+    for col, dtype in declared.items():
+        if dtype == "string":
+            # pandas string dtype already maps empty to <NA> with our dtype, but if csv had "" without dtype handling, ensure
+            df[col] = df[col].astype("string").replace("", pd.NA)
+
+    return df
+
+
+def recreate_schema(db: DataBase) -> None:
+    """Drop existing tables and recreate from CREATE_TABLE_SQL.
+    Keeps table/column names and FKs as defined in schema.py (now TEXT for IDs, composite PK for dwd_order).
+    """
+    # Disable FK checks to allow drop/recreate in any order
+    db.conn.execute("PRAGMA foreign_keys = OFF")
+    for tbl in ("dwd_order", "dim_products", "dim_user"):
+        db.conn.execute(f"DROP TABLE IF EXISTS {tbl}")
+    for tbl in ("dim_user", "dim_products", "dwd_order"):
+        db.conn.execute(CREATE_TABLE_SQL[tbl])
+    db.conn.commit()
+    db.conn.execute("PRAGMA foreign_keys = OFF")  # keep OFF during loading to allow orphan rows for QA; set ON after if desired
+    db.conn.commit()
 
 
 def load_dataframe(db: DataBase, df: pd.DataFrame, table_name: str) -> int:
@@ -75,11 +118,20 @@ def load_dataframe(db: DataBase, df: pd.DataFrame, table_name: str) -> int:
     for column in data.select_dtypes(include="datetime"):
         data[column] = data[column].dt.strftime("%Y-%m-%d %H:%M:%S")
 
-    data = data.astype(object).where(data.notna(), None)
+    def to_native(v):
+        if pd.isna(v):
+            return None
+        if hasattr(v, "item"):   # numpy scalar (int64, float64, ...) -> its own native type
+            return v.item()
+        return v
 
-    db.conn.executemany(sql, data.itertuples(index=False, name=None))
+    rows = [
+        tuple(to_native(v) for v in row)
+        for row in data.itertuples(index=False, name=None)
+    ]
+
+    db.conn.executemany(sql, rows)
     return len(data)
-
 
 def check(db: DataBase) -> None:
     for table_name in DTYPES:
@@ -116,6 +168,16 @@ def check(db: DataBase) -> None:
     )[0]
     print(f"    dwd_order NULLs                : {dict(nulls)}")
 
+    # extra validation: show that ID columns are stored as TEXT
+    for tbl, col in [("dim_user","user_id"),("dim_products","product_id"),("dwd_order","order_id")]:
+        sample = db.query(f"SELECT {col}, typeof({col}) t FROM {tbl} LIMIT 1")
+        if sample:
+            print(f"    {tbl}.{col} sample: {sample[0][col]!r} typeof={sample[0]['t']}")
+
+    dup = db.query("SELECT order_id, COUNT(*) c FROM dwd_order GROUP BY order_id HAVING c>1")
+    if dup:
+        print(f"    duplicate order_id (expected for multi-product orders): {dup}")
+
 
 def main():
     frames = {
@@ -130,13 +192,18 @@ def main():
             c: str(t) for c, t in df.dtypes.items() if str(t) != "object"
         }
         print(f"  {name:14} {non_default}")
+        # show null counts for QA
+        nulls = df.isna().sum()
+        if nulls.any():
+            print(f"    nulls: {nulls[nulls>0].to_dict()}")
 
     with DataBase(DATABASE_PATH) as db:
-        for table_name in ("dim_user", "dim_products", "dwd_order"):
-            db.conn.execute(f"DELETE FROM {table_name}")
+        # Recreate tables to ensure types match string IDs (fixes INTEGER PRIMARY KEY mismatch) and composite PK for dwd_order
+        recreate_schema(db)
 
         for table_name, df in frames.items():
-            load_dataframe(db, df, table_name)
+            n = load_dataframe(db, df, table_name)
+            print(f"  inserted {n} rows into {table_name}")
 
         db.conn.commit()
 
