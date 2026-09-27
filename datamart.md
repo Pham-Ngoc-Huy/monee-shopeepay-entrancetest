@@ -17,7 +17,7 @@ graph TD
     end
 
     subgraph Master Data / Data Mart
-        M1[(mart_user_segment_daily<br/>Partition: part_date)]
+        M1[(dm_fct_user_segment_daily<br/>Partition: part_date)]
         A1[(archive_user_segment_monthly<br/>Partition: part_month)]
     end
     
@@ -33,6 +33,9 @@ graph TD
     end
 
     R1 --> S1 & S2 & S3
+    R2 --> S1 & S2 & S3
+    R3 --> S1 & S2 & S3
+
     S1 & S2 & S3 -- "ETL Insert" --> M1
     M1 -- "Trigger DQ Check" --> DQ
     
@@ -43,90 +46,98 @@ graph TD
     
     M1 -- "End of Month: Archive & Drop" --> A1
 
+
 ```
 
 ---
 
 ## 1. Proposed Table Design and Grain
 
-**Grain:** 1 row per `user_id` per `part_date`.
+**Grain:** 1 row per `user_id` per `part_date`
 
-Thiết kế bảng dạng "Wide Table" (Bảng rộng) với các cờ (flags) để dễ dàng kết hợp nhiều điều kiện lọc cho team CRM. Cấu trúc lưu trữ bao gồm:
+Designed as a "Wide Table" with boolean flags to easily combine multiple filtering conditions for the CRM team. The storage structure includes:
 
 | Column Name | Data Type | Description & Proposed Criteria |
 | --- | --- | --- |
-| `user_id` | INT / VARCHAR | ID định danh người dùng. |
-| `lifecycle_stage` | VARCHAR | **Độc quyền (Mutually Exclusive):** `New` (<= 7 ngày), `Active` (có mua hàng L30D), `Dormant` (không mua L90D), `Churn_Risk` (không mua 30-90D). |
-| `value_tier` | VARCHAR | **Độc quyền:** Dựa trên LTV hoặc GMV 90 ngày (`High`, `Medium`, `Low`). |
-| `is_repeat_buyer` | BOOLEAN | **Behavioral Flag:** True nếu có >= 2 đơn hàng hoàn tất. |
-| `is_bnpl_user` | BOOLEAN | **Behavioral Flag:** True nếu dùng Buy Now Pay Later (Trả sau). |
-| `is_wallet_user` | BOOLEAN | **Behavioral Flag:** True nếu có số dư ví > 0 hoặc phát sinh giao dịch ví. |
-| `is_discount_hunter` | BOOLEAN | **Behavioral Flag:** True nếu > 70% đơn hàng có áp dụng mã khuyến mãi. |
-| `part_date` | DATE | Ngày chốt số liệu (Partition Column). |
+| `user_id` | INT / VARCHAR | User identifier. |
+| `lifecycle_stage` | VARCHAR | **Mutually Exclusive:** `New` (<= 7 days), `Active` (made a purchase in L30D), `Dormant` (no purchase in L90D), `Churn_Risk` (no purchase in 30-90D). |
+| `value_tier` | VARCHAR | **Mutually Exclusive:** Based on LTV or 90-day GMV (`High`, `Medium`, `Low`). |
+| `is_repeat_buyer` | BOOLEAN | **Behavioral Flag:** True if >= 2 completed orders. |
+| `is_bnpl_user` | BOOLEAN | **Behavioral Flag:** True if the user uses Buy Now Pay Later. |
+| `is_wallet_user` | BOOLEAN | **Behavioral Flag:** True if wallet balance > 0 or has wallet transactions. |
+| `is_discount_hunter` | BOOLEAN | **Behavioral Flag:** True if > 70% of orders applied promo codes. |
+| `part_date` | INT | Data snapshot date (Partition Column) - [YYYYMMDD]. |
+
+>[!NOTE]
+>
+> In datamart final, all the `metrics` calculation must in `aggegrate` calculation
 
 ---
 
 ## 2. Primary Key and Partition Column
 
-* **Primary Key:** `(part_date, user_id)`. Bắt buộc `part_date` phải nằm trong PK để hỗ trợ Native Partitioning.
-* **Native Partitioning:** Bảng `mart_user_segment_daily` được phân vùng vật lý theo từng ngày (Partition by Range trên `part_date`).
-* **Indexing:** Tạo Composite B-Tree Index trên `(part_date, lifecycle_stage, user_id)` để tối ưu tốc độ trích xuất danh sách khách hàng.
+* **Primary Key:** `(part_date, user_id)`. The `part_date` must be included in the PK to support Native Partitioning.
+* **Native Partitioning:** The `mart_user_segment_daily` table is physically partitioned by day (Range Partitioning on `part_date`).
+* **Indexing:** Create a Composite B-Tree Index on `(part_date, lifecycle_stage, user_id)` to optimize customer list extraction speed.
 
 ---
 
 ## 3. Snapshot vs Changelog vs Hybrid Approach
 
-**Quyết định: Mô hình Hybrid (Daily Snapshot + Monthly Archive)**
+**Decision: Hybrid Model (Daily Snapshot + Monthly Archive)**
 
-* **Current State:** Lưu `part_date` Snapshot cho 30 - 60 ngày gần nhất tại bảng `mart_user_segment_daily`.
-* **Historical State:** Ngày 1 hàng tháng, gộp Snapshot tháng trước đưa vào bảng `archive_user_segment_monthly` (phân vùng theo tháng).
-* Sau đó chạy lệnh `DROP PARTITION` các ngày cũ trên bảng Daily để giải phóng dung lượng rác ngay lập tức (tránh hiện tượng dead tuples/bloat do lệnh DELETE).
+* **Current State:** Retain `part_date` Snapshots for the last 30 - 60 days in the `mart_user_segment_daily` table.
+* **Historical State:** On the 1st of every month, aggregate the previous month's Snapshots and move them to the `archive_user_segment_monthly` table (partitioned by month).
+* Then execute a `DROP PARTITION` command for the old days in the Daily table to immediately reclaim storage space (avoiding dead tuples/table bloat caused by the `DELETE` command).
 
 ---
 
 ## 4. Refresh / Overwrite Logic
 
-Quy trình chạy Batch Job hàng ngày (T+1) vào rạng sáng:
+Daily Batch Job execution process (T+1) run in the early morning:
 
-1. **Staging Load:** Cập nhật dữ liệu vào `stg_users`, `stg_metrics_transactions`, và `stg_products_segment`.
-2. **Master Load:** Join các bảng Staging và Insert vào Partition mới của ngày hôm qua (`part_date = CURRENT_DATE - 1`).
+1. **Staging Load:** Ingest and update data into `stg_users`, `stg_metrics_transactions`, and `stg_products_segment`.
+2. **Master Load:** Join the Staging tables and Insert data into the new partition for yesterday (`part_date = CURRENT_DATE - 1`).
 
 ---
 
 ## 5. Data Quality Checks & Alerting Workflow (Gatekeeper)
 
-Đây là chốt chặn an toàn trước khi data đến tay người dùng. Toàn bộ logic được đóng gói bằng **PL/SQL**, lên lịch (schedule trigger) chạy ngay sau bước Master Load:
+This is the safety gatekeeper before data reaches the end-users. The entire logic is encapsulated in **PL/SQL**, scheduled to trigger immediately after the Master Load step:
 
-### Bộ Test cơ bản (Base Checks)
+### Base Checks
 
-* **Duplicate Check:** Kiểm tra không có dòng lặp lại (theo `user_id` + `part_date`) từ bảng Master.
-* **Row Stability Check:** Đếm tổng số dòng (RowCount) của `part_date` hôm nay so với trung bình 7 ngày trước xem có biến động bất thường không (tránh lỗi hụt data hoặc nhân đôi data từ Source).
-* **Trend-Threshold Check:** Kiểm tra sự biến động của một số chỉ số quan trọng (VD: Tập `High_Value_User` không được tăng/giảm quá 10% so với ngày hôm qua).
-* **Logic & Reconcile Check:** Kiểm tra chéo (site logic check). Ví dụ: Tổng số GMV của các user trong tập tính toán phải khớp (reconcile) với tổng GMV từ bảng gốc Transactions.
+* **Duplicate Check:** Ensure there are no duplicate rows (based on `user_id` + `part_date`) in the Master table.
+* **Row Stability Check:** Compare the total RowCount of today's `part_date` against the 7-day moving average to detect abnormal fluctuations (prevents missing or duplicated data issues from the Source).
+* **Trend-Threshold Check:** Monitor fluctuations of critical metrics (e.g., The `High_Value_User` segment should not increase/decrease by more than 10% compared to yesterday).
+* **Logic & Reconcile Check:** Perform cross-validation (site logic check). Example: The total GMV of users in the calculated segment must reconcile with the total GMV from the raw Transactions table.
 
-### Alerting Workflow (Cơ chế thông báo)
+### Alerting Workflow (this is available in `Oracle` -- else can work around with `Python` or `Dbt`)
 
-* PL/SQL sẽ format kết quả check thành một bảng **HTML** trực quan.
-* Gửi báo cáo qua **SMTP Email** cho Data Team để validate.
-* **Chỉ khi Passed toàn bộ**, hệ thống mới public data ra View `vw_user_segment_latest` và tự động gửi email "Data is Ready" cho team CRM.
+* `PL/SQL` will format the check results into an intuitive **HTML** table.
+* Send the report via **SMTP Email** to the Data Team for validation.
+* **Only when all checks pass** will the system publish the data to the `vw_user_segment_accessibility` View and automatically send a "Data is Ready" email to the CRM team.
 
 ---
 
 ## 6. Schema Evolution & Trade-offs
 
-### Quy trình thêm Cột (Schema Evolution)
+### Column Addition Process (Schema Evolution)
 
-Để đáp ứng nhu cầu Business liên tục tạo thêm các segment mới mà không làm chết luồng Data Pipeline (Downtime):
+To accommodate Business needs for continuously creating new segments without causing Data Pipeline downtime:
 
-1. Thêm logic tính toán vào `stg_metrics_transactions`.
-2. Chạy lệnh `ALTER TABLE mart_user_segment_daily ADD COLUMN new_segment_flag BOOLEAN DEFAULT NULL`. Việc để `DEFAULT NULL` trước khi Insert đảm bảo các mã code cũ không bị lỗi "column count mismatch".
-3. Cập nhật câu lệnh `INSERT` của luồng Master Load để đẩy dữ liệu vào cột mới.
-
-### Trade-offs (Đánh đổi)
-
-* **Storage Cost vs Query Performance:** Tốn chi phí lưu trữ Snapshot 1 row/user/day, bù lại tốc độ Read cho CRM là cực đại vì không cần JOIN.
-* **Wide Table Flexibility:** Bảng sẽ phình to theo chiều ngang khi thêm nhiều cột. Tuy nhiên, xử lý thêm cột rất gọn nhẹ bằng `ALTER TABLE ... DEFAULT NULL` mà không ảnh hưởng luồng hệ thống hiện tại.
-
+1. Add the calculation logic to `stg_metrics_transactions`.
+2. Execute 
+```sql
+ALTER TABLE mart_user_segment_daily 
+ADD COLUMN new_segment_flag BOOLEAN DEFAULT NULL`
 ```
+Setting `DEFAULT NULL` prior to insertion ensures legacy code does not fail due to a "column count mismatch" error.
 
-```
+3. Update the `INSERT` statement in the Master Load workflow to populate data into the new column.
+
+### Trade-offs
+
+* **Storage Cost vs Query Performance:** Higher storage costs to maintain a 1 row/user/day Snapshot, but this is offset by maximum Read performance for the CRM team since no JOINs are required.
+* **Wide Table Flexibility:** The table will expand horizontally as more columns are added. However, adding columns is efficiently handled via `ALTER TABLE ... DEFAULT NULL` without impacting the current system workflows.
+* **Adjusting Logic will not break whole pipeline**: Business logic modifications (e.g., updating segment definitions) are contained within the Staging layer. This decoupling ensures that changing how a metric is calculated does not cause schema failures or disrupt downstream CRM consumption.
