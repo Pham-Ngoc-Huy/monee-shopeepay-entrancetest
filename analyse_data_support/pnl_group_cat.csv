@@ -1,0 +1,288 @@
+category,payment_method,state,seg_frequency,seg_high_value_user,seg_bnpl_user,seg_wallet_user,seg_discount_sensitive_user,seg_dormant_user,profit,cost
+Beauty,BNPL,Hà Nội,new_user,0,1,0,0,0,0.3931237721021611,0.0
+Beauty,BNPL,Hà Nội,new_user,0,1,0,0,1,0.6999312377210216,0.0
+Beauty,BNPL,Hà Nội,repeat_buyer,0,0,0,0,0,-28.77637451755251,41.54716239333243
+Beauty,BNPL,Hà Nội,repeat_buyer,0,0,0,0,1,-6.264198010894514,7.460691468740284
+Beauty,BNPL,Hà Nội,repeat_buyer,0,0,0,1,0,-254.16464459004246,282.1427090228617
+Beauty,BNPL,Hà Nội,repeat_buyer,0,0,0,1,1,-29.52334181049042,32.48501638491716
+Beauty,BNPL,Hà Nội,repeat_buyer,0,0,1,0,0,0.0854616895874263,0.0
+Beauty,BNPL,Hà Nội,repeat_buyer,0,0,1,1,0,-1.988998344995584,2.422761202734891
+Beauty,BNPL,Hà Nội,repeat_buyer,0,0,1,1,1,-1.4920790419102337,1.5799390421072326
+Beauty,BNPL,Hà Nội,repeat_buyer,0,1,0,0,0,1.719916502946955,0.0
+Beauty,BNPL,Hà Nội,repeat_buyer,0,1,0,1,0,-1.2406303808784318,1.3243571349740626
+Beauty,BNPL,Hà Nội,repeat_buyer,0,1,0,1,1,-1.760029533450667,1.9218614882562937
+Beauty,BNPL,Hà Nội,repeat_buyer,0,1,1,0,1,0.5376969680609915,0.0190295502532164
+Beauty,BNPL,Hà Nội,repeat_buyer,1,0,0,0,0,-4.2987007376133555,7.80086263225198
+Beauty,BNPL,Hà Nội,repeat_buyer,1,0,0,0,1,-3.1526757177410403,3.6238245444532238
+Beauty,BNPL,Hà Nội,repeat_buyer,1,0,0,1,0,-120.47084195777079,133.8335101056841
+Beauty,BNPL,Hà Nội,repeat_buyer,1,0,1,0,1,0.08470012211278449,0.0031598780842144
+Beauty,BNPL,TP. Hồ Chí Minh,new_user,0,1,0,0,1,0.2833567779960707,0.0
+Beauty,BNPL,TP. Hồ Chí Minh,new_user,0,1,0,1,0,-27.726581841783727,28.147540431478273
+Beauty,BNPL,TP. Hồ Chí Minh,new_user,0,1,0,1,1,-39.336297260459716,40.123191593576394
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,-38.444225619593496,53.753365395220385
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,1,-4.888538992881521,6.743568497139415
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-161.09033349000845,179.13524911698318
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,1,-6.822753830559184,8.042321198044771
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,1,0,0,-0.9913188842421181,1.4925504911157654
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,-5.4548084047886025,6.119782194338937
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,-30.31052365861663,44.56242391403843
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,1,-1.3163758856954892,3.0209004052254826
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,-61.594652092749016,68.89474109483339
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,1,-40.17808258906671,42.10808999733373
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,-56.08238866422321,72.63868342424071
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,1,1.666502946954813,0.0
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-121.4375687669678,138.78488337763494
+Beauty,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,1,0,0,0,-7.8164151272972155,13.889828998417594
+Beauty,Cash,Hà Nội,new_user,0,0,0,0,0,0.6137033398821217,0.0
+Beauty,Cash,Hà Nội,new_user,0,0,0,0,1,0.18075437734681862,0.8353927685141994
+Beauty,Cash,Hà Nội,new_user,0,0,0,1,1,-24.58512594888551,25.34994449576432
+Beauty,Cash,Hà Nội,repeat_buyer,0,0,0,0,0,-79.09671049477707,117.93794554472625
+Beauty,Cash,Hà Nội,repeat_buyer,0,0,0,0,1,-12.596554717942862,21.24745496147676
+Beauty,Cash,Hà Nội,repeat_buyer,0,0,0,1,0,-587.1732905418057,677.7838556425344
+Beauty,Cash,Hà Nội,repeat_buyer,0,0,0,1,1,-65.49701869297964,75.38764669240403
+Beauty,Cash,Hà Nội,repeat_buyer,0,0,1,0,0,0.5006309154114676,0.0032353494748825
+Beauty,Cash,Hà Nội,repeat_buyer,0,0,1,0,1,0.0589390962671905,0.0
+Beauty,Cash,Hà Nội,repeat_buyer,0,0,1,1,0,-7.132515501058454,8.657878166633665
+Beauty,Cash,Hà Nội,repeat_buyer,0,0,1,1,1,-7.922513760810445,9.974511319163884
+Beauty,Cash,Hà Nội,repeat_buyer,0,1,0,0,0,0.44980606051122374,0.8735443582182938
+Beauty,Cash,Hà Nội,repeat_buyer,0,1,0,1,0,0.1467583497053045,0.0
+Beauty,Cash,Hà Nội,repeat_buyer,0,1,0,1,1,-1.0023824462116904,1.1873864417706865
+Beauty,Cash,Hà Nội,repeat_buyer,1,0,0,0,0,-20.861893466057932,34.28358819221518
+Beauty,Cash,Hà Nội,repeat_buyer,1,0,0,0,1,-7.825837497642575,9.972187101031
+Beauty,Cash,Hà Nội,repeat_buyer,1,0,0,1,0,-231.0776810023419,281.4767617320779
+Beauty,Cash,Hà Nội,repeat_buyer,1,0,1,0,1,1.3559277015487043,0.0033108928374351
+Beauty,Cash,TP. Hồ Chí Minh,new_user,0,0,0,0,0,1.5618860510805501,0.0
+Beauty,Cash,TP. Hồ Chí Minh,new_user,0,0,0,0,1,1.1199693623794713,0.0026990625302665
+Beauty,Cash,TP. Hồ Chí Minh,new_user,0,0,0,1,1,-1.3061629072051049,1.502385663436204
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,-20.49998499275961,45.378773898989984
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,1,-0.2669091522098832,2.7193136140419205
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-175.4492249344781,205.00474146498078
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,1,-13.493143457327644,16.025286983974873
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,1,0,0,2.0017190569744594,0.0
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,-4.0952786697868575,4.613255363703375
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,1,-8.13894812981043,8.387443562955593
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,-6.843536537813523,11.105008056120676
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,1,-0.3491530337886096,0.8337711287705067
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,-9.030057559649642,10.534501428191039
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,1,-2.0963289207096865,2.76218158983447
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,-11.93708490715855,39.20949348966398
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,1,3.8272199594109333,1.642616656629315
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-108.3851569567582,129.12880196455947
+Beauty,Cash,TP. Hồ Chí Minh,repeat_buyer,1,1,0,0,0,0.29447061177915135,0.005934412005148999
+Beauty,Credit,Hà Nội,new_user,0,0,0,0,0,0.4167093761779731,0.0187650269543188
+Beauty,Credit,Hà Nội,new_user,0,0,0,0,1,4.224407490966314,0.0124838865903828
+Beauty,Credit,Hà Nội,new_user,0,0,0,1,0,-29.789649329828833,31.221122432616824
+Beauty,Credit,Hà Nội,new_user,0,0,0,1,1,-26.87952413932151,28.598655905744405
+Beauty,Credit,Hà Nội,repeat_buyer,0,0,0,0,0,39.0000989020007,45.627222168179514
+Beauty,Credit,Hà Nội,repeat_buyer,0,0,0,0,1,7.917271101831384,8.97593278441503
+Beauty,Credit,Hà Nội,repeat_buyer,0,0,0,1,0,-132.61082877867204,216.41679557699658
+Beauty,Credit,Hà Nội,repeat_buyer,0,0,0,1,1,-16.794368440566224,28.778738555019324
+Beauty,Credit,Hà Nội,repeat_buyer,0,0,1,0,0,1.5184184675834969,0.0
+Beauty,Credit,Hà Nội,repeat_buyer,0,0,1,1,0,-9.383168029721487,10.886341174331255
+Beauty,Credit,Hà Nội,repeat_buyer,0,0,1,1,1,-0.023711554073318375,1.1616377937517024
+Beauty,Credit,Hà Nội,repeat_buyer,1,0,0,0,0,13.372830675262875,18.525116978256737
+Beauty,Credit,Hà Nội,repeat_buyer,1,0,0,0,1,4.692910892665525,1.606472954547492
+Beauty,Credit,Hà Nội,repeat_buyer,1,0,0,1,0,-54.43618010168463,91.11527550449591
+Beauty,Credit,Hà Nội,repeat_buyer,1,0,1,0,1,0.9730376899925874,0.4900231347692588
+Beauty,Credit,TP. Hồ Chí Minh,new_user,0,0,0,0,1,0.2638998035363458,0.0
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,2.542622794666772,5.6587032068557015
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,1,-2.6975563388421544,3.3287344582245373
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-22.6525361236227,36.87985537954669
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,1,-4.512960689670515,6.409052287496134
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,1,0,0,0.1346952260631858,0.0020706236639248
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,-1.1122797073337565,1.2507850750015574
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,2.184983152159661,2.1851434916029424
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,1,0.3315324165029469,0.0
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,0.28277568785808044,0.4544272814745263
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,2.2717151872441987,11.25557841765985
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,1,2.5213040275049114,0.0
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-12.231112589144628,22.917965062537533
+Beauty,Credit,TP. Hồ Chí Minh,repeat_buyer,1,1,0,0,0,0.270478344842526,0.0014455026578337
+Beauty,Credit Installment,Hà Nội,new_user,0,0,0,0,1,13.123256638228469,0.0095271766084499
+Beauty,Credit Installment,Hà Nội,repeat_buyer,0,0,0,0,0,53.02067007667502,5.135897859115014
+Beauty,Credit Installment,Hà Nội,repeat_buyer,0,0,0,0,1,7.40769873818167,2.2141511679284593
+Beauty,Credit Installment,Hà Nội,repeat_buyer,0,0,0,1,0,4.71141259806383,23.270744967606188
+Beauty,Credit Installment,Hà Nội,repeat_buyer,0,0,0,1,1,-1.4808537338805992,3.255005012117229
+Beauty,Credit Installment,Hà Nội,repeat_buyer,0,0,1,1,0,-0.37424693467295334,0.6206959707077288
+Beauty,Credit Installment,Hà Nội,repeat_buyer,1,0,0,0,0,182.8759606261404,1.8105404852238585
+Beauty,Credit Installment,Hà Nội,repeat_buyer,1,0,0,0,1,20.95911522370141,0.7391774954831924
+Beauty,Credit Installment,Hà Nội,repeat_buyer,1,0,0,1,0,12.197673304024411,6.629866853593894
+Beauty,Credit Installment,Hà Nội,repeat_buyer,1,0,1,0,1,10.393007483496364,0.0011826839927731
+Beauty,Credit Installment,TP. Hồ Chí Minh,new_user,0,0,0,0,0,4.8713163064833,0.0
+Beauty,Credit Installment,TP. Hồ Chí Minh,new_user,0,0,0,0,1,12.37057956777996,0.0
+Beauty,Credit Installment,TP. Hồ Chí Minh,new_user,0,0,0,1,1,-2.552284074037823,3.1209716475957037
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,13.124966863494862,3.1895374339752944
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,1,21.76452848722986,0.0
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-4.004921122248873,7.7962548227381365
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,1,-1.4180420966698513,2.4846631429024213
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,0.2641182371910062,0.0009842870820629
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,0.5239161804241453,0.0016500282321901
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,-0.10064560892965968,1.6792368102412856
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,445.91487974854573,1.297079928761643
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,1,37.496316306483294,0.0
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-3.5619059520550156,8.81008408994814
+Beauty,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,1,1,0,0,0,6.730108055009823,0.0
+Beauty,Wallet,Hà Nội,new_user,0,0,1,0,0,0.1041385050643643,0.021353306534224802
+Beauty,Wallet,Hà Nội,new_user,0,0,1,0,1,0.3028167193586978,0.0108767078735831
+Beauty,Wallet,Hà Nội,new_user,0,0,1,1,1,-13.076360129498662,13.252996525269644
+Beauty,Wallet,Hà Nội,repeat_buyer,0,0,0,0,0,-72.76900998675868,86.98528642000869
+Beauty,Wallet,Hà Nội,repeat_buyer,0,0,0,0,1,-17.323046814221772,19.920252389916886
+Beauty,Wallet,Hà Nội,repeat_buyer,0,0,0,1,0,-473.0410028076513,502.06679776260546
+Beauty,Wallet,Hà Nội,repeat_buyer,0,0,0,1,1,-43.72735188035491,47.06259042275995
+Beauty,Wallet,Hà Nội,repeat_buyer,0,0,1,0,0,-2.2477760192022234,2.6983164775456583
+Beauty,Wallet,Hà Nội,repeat_buyer,0,0,1,0,1,0.0707269155206286,0.0
+Beauty,Wallet,Hà Nội,repeat_buyer,0,0,1,1,0,-22.947396802559933,24.335825001298936
+Beauty,Wallet,Hà Nội,repeat_buyer,0,0,1,1,1,-13.566956469678548,14.587299413666639
+Beauty,Wallet,Hà Nội,repeat_buyer,0,1,0,0,0,0.1768172888015717,0.0
+Beauty,Wallet,Hà Nội,repeat_buyer,0,1,0,1,1,0.028131010750319402,0.001324357134974
+Beauty,Wallet,Hà Nội,repeat_buyer,0,1,1,0,1,0.1375424334228478,0.0067905033478909
+Beauty,Wallet,Hà Nội,repeat_buyer,1,0,0,0,0,-17.03653432367561,20.998963026516083
+Beauty,Wallet,Hà Nội,repeat_buyer,1,0,0,0,1,-2.490760347840341,3.542644556153205
+Beauty,Wallet,Hà Nội,repeat_buyer,1,0,0,1,0,-227.94195921115121,244.83427240371392
+Beauty,Wallet,Hà Nội,repeat_buyer,1,0,1,0,1,-3.5789170828203676,4.448919349680765
+Beauty,Wallet,TP. Hồ Chí Minh,new_user,0,0,1,0,1,0.2097462762266717,0.0041393939747058
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,-25.853046579204385,31.432821739914274
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,1,-1.855914224919133,2.4024663809656555
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-164.02990204673054,172.8419722512327
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,1,-8.532111118867133,9.55572149214936
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,1,0,0,2.0557532021565215,0.0013495312651332
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,1,0,1,0.4597249508840864,0.0
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,-7.16974540746448,7.767331660036631
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,1,-0.4443879846029378,0.5131883898024487
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,-7.7379980847644765,8.904703448614432
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,1,0.2298624754420432,0.0
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,-8.542072789384713,8.96163972961904
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,1,-1.3173438480919846,1.413974681836184
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,1,1,1,0,-6.2380132561471004,6.290696391126803
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,-13.575258353711469,22.28489302665509
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,1,0.5517680886827983,0.5749158298202588
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-93.81522626532868,100.13716559405013
+Beauty,Wallet,TP. Hồ Chí Minh,repeat_buyer,1,1,0,0,0,-2.846980998797705,3.040562796550953
+Electronics,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,0.1629469548133595,0.0
+Electronics,Wallet,Hà Nội,repeat_buyer,0,0,0,1,0,0.1936345776031434,0.0
+Fashion,BNPL,Hà Nội,repeat_buyer,0,0,0,0,0,-2.4688333413846286,3.6662040205340136
+Fashion,BNPL,Hà Nội,repeat_buyer,0,0,0,0,1,-0.6396026694689346,0.690126151031561
+Fashion,BNPL,Hà Nội,repeat_buyer,0,0,0,1,0,-13.731417593504514,14.891987370225497
+Fashion,BNPL,Hà Nội,repeat_buyer,0,0,0,1,1,-0.5342082954169743,0.632954951687827
+Fashion,BNPL,Hà Nội,repeat_buyer,1,0,0,0,0,-0.5245113910816452,0.6245906868250277
+Fashion,BNPL,Hà Nội,repeat_buyer,1,0,0,1,0,0.29068116922677123,0.0093120217635235
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,-1.4338582026300544,1.81417453894575
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-12.490349347451847,14.080980750320302
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,1,-0.6953889635420545,0.7460823254395257
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,0.0475462718763818,0.0024933759953094
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,-1.8028246681680888,1.9512195121951144
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,1,0.4721758349705304,0.0
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,-1.0275806726576384,1.5009380863039374
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,2.1054199410609034,0.0
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,1,0.2360879174852652,0.0
+Fashion,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-6.7471810253415665,7.9574142323219625
+Fashion,Cash,Hà Nội,repeat_buyer,0,0,0,0,0,0.4080808231628319,2.4190676752782756
+Fashion,Cash,Hà Nội,repeat_buyer,0,0,0,0,1,-0.2530515568567035,0.690126151031561
+Fashion,Cash,Hà Nội,repeat_buyer,0,0,0,1,0,-43.284392325685126,49.131631284740415
+Fashion,Cash,Hà Nội,repeat_buyer,0,0,0,1,1,-3.888176656498268,4.559842529529018
+Fashion,Cash,Hà Nội,repeat_buyer,0,0,1,0,0,0.066526827965644,0.0024933759953094
+Fashion,Cash,Hà Nội,repeat_buyer,0,0,1,1,0,-1.6718808880127836,2.0083889458404816
+Fashion,Cash,Hà Nội,repeat_buyer,1,0,0,0,0,-1.6018963792508574,1.8715704580205805
+Fashion,Cash,Hà Nội,repeat_buyer,1,0,0,1,0,-9.472562807619711,10.230057073673663
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,-0.6600527743904575,1.2764848085736988
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-11.30939994179452,12.483140199410883
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,1,-1.4222427723997808,1.4921646508790514
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,-0.5627593516533287,0.63213103714707
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,0.4909626719056974,0.0
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,1,0.0667976424361493,0.0
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,1,0.1357987740373096,0.0018386491557223
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,5.524165029469548,0.0
+Fashion,Cash,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-1.582993778941293,1.9916374806723232
+Fashion,Credit,Hà Nội,new_user,0,0,0,1,1,-0.9862682015010342,1.7346414066469031
+Fashion,Credit,Hà Nội,repeat_buyer,0,0,0,0,0,3.4472511915403463,8.461101520291226
+Fashion,Credit,Hà Nội,repeat_buyer,0,0,0,0,1,3.8550606622999877,0.0025515947467166
+Fashion,Credit,Hà Nội,repeat_buyer,0,0,0,1,0,-11.1843174203238,17.089670983944238
+Fashion,Credit,Hà Nội,repeat_buyer,0,0,0,1,1,0.1556209717228513,0.0014873671462284
+Fashion,Credit,Hà Nội,repeat_buyer,1,0,0,0,0,-0.561884751332451,1.7600301143361223
+Fashion,Credit,Hà Nội,repeat_buyer,1,0,0,0,1,1.4804027504911588,0.0
+Fashion,Credit,Hà Nội,repeat_buyer,1,0,0,1,0,0.7611902402372024,1.4994911725085809
+Fashion,Credit,TP. Hồ Chí Minh,new_user,0,0,0,1,1,-1.22345529031704,1.380252302063122
+Fashion,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-2.441859650504039,2.755215672052903
+Fashion,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,-1.1029738128102444,1.2588149862072524
+Fashion,Credit,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,0.1535577682123298,0.0025285241485882
+Fashion,Credit,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,1.4804027504911588,0.0
+Fashion,Credit Installment,Hà Nội,repeat_buyer,0,0,0,0,0,-0.09714987091941407,0.6914690992173521
+Fashion,Credit Installment,Hà Nội,repeat_buyer,0,0,0,1,0,0.8783858394159055,0.0038077443634353
+Fashion,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,0.6026704476260716,0.0042601266751164
+Fashion,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,121.60343811394891,0.0
+Fashion,Wallet,Hà Nội,new_user,0,0,1,0,1,0.026495946926773,0.0012659099033756
+Fashion,Wallet,Hà Nội,repeat_buyer,0,0,0,0,0,-5.701201590466479,6.136978095024372
+Fashion,Wallet,Hà Nội,repeat_buyer,0,0,0,0,1,0.0534381139489194,0.0
+Fashion,Wallet,Hà Nội,repeat_buyer,0,0,0,1,0,-20.91522249971444,22.463047890219492
+Fashion,Wallet,Hà Nội,repeat_buyer,0,0,0,1,1,-7.514414553509145,7.827032906670948
+Fashion,Wallet,Hà Nội,repeat_buyer,0,0,1,0,0,0.0534381139489194,0.0
+Fashion,Wallet,Hà Nội,repeat_buyer,0,0,1,1,0,-0.5032627149350891,0.6388867092938042
+Fashion,Wallet,Hà Nội,repeat_buyer,0,0,1,1,1,0.0513776709657681,0.0036772983114446
+Fashion,Wallet,Hà Nội,repeat_buyer,1,0,0,0,0,0.07653062641436,0.0025318198067513
+Fashion,Wallet,Hà Nội,repeat_buyer,1,0,0,1,0,-6.723854211784504,7.221459050237297
+Fashion,Wallet,TP. Hồ Chí Minh,new_user,0,0,1,0,0,0.2605108055009823,0.0
+Fashion,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,-3.3778630603257804,3.5510890616203143
+Fashion,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,1,0.051586523040885304,0.0031234710070796
+Fashion,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-7.534217903308893,7.977667912219235
+Fashion,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,0,-1.1867343256843397,1.2698963651668187
+Fashion,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,1,1,1,0.0259174852652259,0.0
+Fashion,Wallet,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,-0.6927144936735083,1.246687997654746
+Fashion,Wallet,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-2.8776094476735388,3.0415914088218883
+Home Living,BNPL,Hà Nội,repeat_buyer,0,0,0,0,0,0.1078399373033547,0.0021851892727071
+Home Living,BNPL,Hà Nội,repeat_buyer,0,0,0,0,1,0.1378781925343811,0.0
+Home Living,BNPL,Hà Nội,repeat_buyer,0,0,0,1,0,-9.496309519944955,11.069733334586957
+Home Living,BNPL,Hà Nội,repeat_buyer,0,1,0,1,1,-2.785615768060054,2.896554910529929
+Home Living,BNPL,Hà Nội,repeat_buyer,1,0,0,0,0,0.4900943025540275,0.0
+Home Living,BNPL,Hà Nội,repeat_buyer,1,0,0,1,0,0.061418467583497,0.0
+Home Living,BNPL,TP. Hồ Chí Minh,new_user,0,1,0,1,0,-1.061644713836367,1.1862948074569404
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,-3.6089335921330594,4.229935687677206
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-5.700618808607807,5.961304300001622
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,0,1,0,0,0.5076424361493125,0.0
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,-2.096431004400364,3.084366499388053
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,-35.176867455042725,38.63057264443816
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,1,-10.343778107780885,11.567210917558969
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,0,1,1,1,0,-2.8171579199209926,3.084366499388053
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,-9.121797375865683,9.897673165249023
+Home Living,BNPL,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-15.589109485465984,17.48981147447642
+Home Living,Cash,Hà Nội,new_user,0,0,0,1,1,-2.0321505704379232,2.172416182897444
+Home Living,Cash,Hà Nội,repeat_buyer,0,0,0,0,0,-1.1486089711986636,5.379026057672259
+Home Living,Cash,Hà Nội,repeat_buyer,0,0,0,0,1,-0.021883260872088833,1.2068978793874696
+Home Living,Cash,Hà Nội,repeat_buyer,0,0,0,1,0,-17.315164323577775,21.032245045913708
+Home Living,Cash,Hà Nội,repeat_buyer,0,0,0,1,1,-0.7953274277188409,1.216528291759223
+Home Living,Cash,Hà Nội,repeat_buyer,1,0,0,0,0,2.106783547318511,0.0048183421927793
+Home Living,Cash,Hà Nội,repeat_buyer,1,0,0,1,0,0.26168306793094187,0.0119865665061524
+Home Living,Cash,TP. Hồ Chí Minh,new_user,0,0,0,1,0,-2.28191581868633,2.3725896149138808
+Home Living,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,0.5261502351629146,3.719594794621324
+Home Living,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,1,0.8019040949034697,0.0021682539867506
+Home Living,Cash,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-6.766254262550243,8.90566372120373
+Home Living,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,-0.5182798904736705,1.4374011953231591
+Home Living,Cash,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,-1.8221757179145397,2.395668658871939
+Home Living,Cash,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,-1.4707544000508215,3.6444101092594616
+Home Living,Cash,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-7.778761502180208,9.148361207838878
+Home Living,Credit,Hà Nội,repeat_buyer,0,0,0,0,0,7.958795040154084,1.2183305483663933
+Home Living,Credit,Hà Nội,repeat_buyer,0,0,0,0,1,2.3826129666011786,0.0
+Home Living,Credit,Hà Nội,repeat_buyer,0,0,0,1,0,-34.21254324160065,47.73876436962905
+Home Living,Credit,Hà Nội,repeat_buyer,0,1,0,1,1,-2.2838523757053943,2.896554910529929
+Home Living,Credit,Hà Nội,repeat_buyer,1,0,0,0,0,-20.43040617955739,32.71477128008869
+Home Living,Credit,Hà Nội,repeat_buyer,1,0,0,1,0,0.5834970530451866,0.0
+Home Living,Credit,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,0.3792730844793713,0.0
+Home Living,Credit,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,0.3598231827111984,0.0
+Home Living,Credit,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,-1.8422060238301878,2.427988080785784
+Home Living,Credit Installment,Hà Nội,repeat_buyer,0,0,0,1,0,0.5264440078585462,0.0
+Home Living,Credit Installment,Hà Nội,repeat_buyer,1,0,0,0,0,2.286271119842829,0.0
+Home Living,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,0.7506956758049329,0.0050110758804905
+Home Living,Credit Installment,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,0.5373675279988198,0.0037961433838622
+Home Living,Wallet,Hà Nội,repeat_buyer,0,0,0,0,0,0.1722172308156527,2.169696216324162
+Home Living,Wallet,Hà Nội,repeat_buyer,0,0,0,0,1,0.28699410609037324,0.0
+Home Living,Wallet,Hà Nội,repeat_buyer,0,0,0,1,0,-25.473154280298857,27.06812924555812
+Home Living,Wallet,Hà Nội,repeat_buyer,0,0,0,1,1,0.0341853718831338,0.0024137957587749
+Home Living,Wallet,Hà Nội,repeat_buyer,0,0,1,1,0,0.0345776031434184,0.0
+Home Living,Wallet,Hà Nội,repeat_buyer,1,0,0,0,0,-1.731343088733309,2.415961190355478
+Home Living,Wallet,Hà Nội,repeat_buyer,1,0,0,1,0,0.034284718137209805,0.0024279880807857
+Home Living,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,0,0,-3.626752076332888,4.959169288310041
+Home Living,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,0,1,0,-7.847493748247725,8.034385489540773
+Home Living,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,0,1,0,0,0.2420432220039293,0.0
+Home Living,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,1,0,0,0,0.2060603358490324,0.0037961433838622
+Home Living,Wallet,TP. Hồ Chí Minh,repeat_buyer,0,1,0,1,0,-1.1038836645598313,1.1901494812111637
+Home Living,Wallet,TP. Hồ Chí Minh,repeat_buyer,1,0,0,0,0,-2.9001962440267874,3.8662713617343423
+Home Living,Wallet,TP. Hồ Chí Minh,repeat_buyer,1,0,0,1,0,-0.8379502135746844,1.2196882554686852

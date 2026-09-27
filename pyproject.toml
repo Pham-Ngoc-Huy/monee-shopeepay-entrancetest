@@ -9,8 +9,13 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "duckdb>=1.5.5",
+    "ipykernel>=7.3.0",
+    "ipython>=9.17.1",
+    "matplotlib>=3.11.2",
+    "matplotlib-inline>=0.2.2",
     "openpyxl>=3.1.5",
     "pandas>=3.0.6",
+    "stack-data>=0.6.3",
 ]
 
 [project.scripts]
