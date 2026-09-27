@@ -1,4 +1,4 @@
-user_id,df_case_study,nmv,avg_basket,discount_pct,days_since_last,seg_frequency,seg_value,seg_bnpl,seg_wallet,seg_discount,seg_dormant
+user_id,order,nmv,avg_basket,discount_pct,days_since_last,seg_frequency,seg_value,seg_bnpl,seg_wallet,seg_discount,seg_dormant
 A0M3423,51,3545.4,69.52,0.44,6,repeat_buyer,high_value_user,,,,
 A33NMN4,70,1969.58,28.14,0.91,0,repeat_buyer,high_value_user,,,,
 A25MN6M,47,1099.07,23.38,2.29,6,repeat_buyer,high_value_user,,,,
