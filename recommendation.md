@@ -11,10 +11,6 @@ which payment services should the company prioritize, for which user segments, a
 
 The real question is: are we losing money for a reason?”
 
-“We spent $5.5K to keep the payment ecosystem growing, but only recovered $2.2K in fee revenue. So the question is not whether we are losing money — we already know that.
-
-The real question is: are we losing money for a reason?”
-
 ## SLIDE 2
 
 So I first asked a very simple question: which payment methods are actually paying back the subsidy?
@@ -39,7 +35,9 @@ There is also a meaningful group of normal customers using BNPL and Wallet frequ
 These users may already be loyal. If they are going to purchase anyway, continuing to subsidize them creates very little incremental value
 
 This suggests an opportunity to distinguish between subsidy that changes behavior and subsidy that simply discounts behavior that would have happened anyway.”
+
 ## SLIDE 4
+
 And then Credit Installment gives us a very different story.
 9% platform discount
 
@@ -50,6 +48,7 @@ $41.5 AOV
 So I don't think Credit Installment needs more subsidy.
 
 Instead of putting more money into something that already works, I would let it grow organically.
+
 ## SLIDE 5
 
 Sau slide 5, bạn nói:
@@ -79,8 +78,6 @@ Rồi đừng nói ngay “therefore cut subsidy”.
 Nói:
 
 “So some of the platform subsidy may be incremental — but some of it may simply overlap with discounts that are already strong enough to drive the transaction.”
-
-🔥 Đây mới là insight quan trọng của slide.
 
 Sau đó mới chốt:
 
